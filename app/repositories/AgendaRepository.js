@@ -22,6 +22,7 @@ function AgendaRepository() {
       estado: dados.estado,
       cep: dados.cep,
       complemento: dados.complemento,
+      email: dados.email,
     };
 
     const contact_created = await Agenda.create(contato);
@@ -39,6 +40,7 @@ function AgendaRepository() {
       estado: dados.estado,
       cep: dados.cep,
       complemento: dados.complemento,
+      email: dados.email,
     };
 
     const contact_updated = await Agenda.update(contact, { where: { id: id } });

@@ -29,7 +29,6 @@ function AgendaController() {
       const contact = await AgendaRepository.create(req.body);
       res.status(201).json(contact);
     } catch (error) {
-      message: "erro",
       res.status(400).json(error.details);
     }
   }
@@ -51,7 +50,7 @@ function AgendaController() {
   }
 
   async function remove(req, res) {
-    const contact = await AgendaRepository.findById(req.params.id);
+    const contact = await AgendaRepository.findByID(req.params.id);
 
     if (!contact) {
       return res.status(404).send({
