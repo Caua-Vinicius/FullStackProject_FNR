@@ -4,6 +4,8 @@ const router = express.Router();
 const NavegacaoController = require("../app/controllers/NavegacaoController");
 const TasksController = require("../app/controllers/TasksController");
 const UsersController = require("../app/controllers/UsersController");
+const AgendaController = require("../app/controllers/api/AgendaController");
+
 
 // Rotas das Tarefas
 router.get('/tasks', TasksController.list)
@@ -25,6 +27,7 @@ router.post('/users/update-status/:id', UsersController.updateStatus)
 router.get('/', NavegacaoController.index);
 router.get('/sobre', NavegacaoController.sobre);
 
+router.get('/agenda', AgendaController.create);
 
 
 router.get('*', function notFound(request, response) {
