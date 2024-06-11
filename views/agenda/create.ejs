@@ -1,61 +1,117 @@
 <%- include("includes/header"); %>
 
-   <div class="container">
-    
-
+<div class="container">
     <h3>Realizar formulário</h3>
-    <hr>
+    <hr />
 
     <% if (typeof error != "undefined") { %>
-        <div class="alert alert-danger" role="alert">
-            <%= error.message %>
-        </div>
-        <% } %>
+    <div class="alert alert-danger" role="alert"><%= error.message %></div>
+    <% } %>
 
     <form method="POST" action="/agenda/save">
         <div class="mb-3">
-            <label for="name" class="form-label">Nome</label>
-            <input type="text" class="form-control" id="Nome" value="Nome completo">
+            <label for="nome" class="form-label">Nome</label>
+            <input
+                type="text"
+                class="form-control"
+                name="nome"
+                id="nome"
+                placeholder="Nome completo"
+            />
         </div>
         <div class="mb-3">
             <label for="celular" class="form-label">Celular</label>
-            <input type="text" class="form-control" id="celular" value="Numero de telefone">
+            <input
+                type="text"
+                class="form-control"
+                name="celular"
+                id="celular"
+                placeholder="Número de telefone"
+            />
         </div>
         <div class="mb-3">
             <label for="email" class="form-label">Email</label>
-            <input type="text" class="form-control" id="email" value="Digite seu email">
+            <input
+                type="text"
+                class="form-control"
+                name="email"
+                id="email"
+                placeholder="Digite seu email"
+            />
         </div>
         <div class="mb-3">
             <label for="rua" class="form-label">Rua</label>
-            <input type="text" class="form-control" id="Rua" value="Nome da Rua">
+            <input
+                type="text"
+                class="form-control"
+                name="rua"
+                id="rua"
+                placeholder="Nome da Rua"
+            />
         </div>
         <div class="mb-3">
-            <label for="Complemento" class="form-label">Complemento</label>
-            <input type="text" class="form-control" id="Complemento" value="Complemento">
+            <label for="complemento" class="form-label">Complemento</label>
+            <input
+                type="text"
+                class="form-control"
+                name="complemento"
+                id="complemento"
+                placeholder="Complemento"
+            />
         </div>
         <div class="mb-3">
-            <label for="Numero" class="form-label">Numero</label>
-            <input type="text" class="form-control" id="Numero" value="Numero">
+            <label for="numero" class="form-label">Numero</label>
+            <input
+                type="text"
+                class="form-control"
+                name="numero"
+                id="numero"
+                placeholder="Número"
+            />
         </div>
         <div class="mb-3">
-            <label for="Bairro" class="form-label">Bairro</label>
-            <input type="text" class="form-control" id="Bairro" value="Bairro">
+            <label for="bairro" class="form-label">Bairro</label>
+            <input
+                type="text"
+                class="form-control"
+                name="bairro"
+                id="bairro"
+                placeholder="Bairro"
+            />
         </div>
         <div class="mb-3">
-            <label for="Cidade" class="form-label">Cidade</label>
-            <input type="text" class="form-control" id="Cidade" value="Cidade">
+            <label for="cidade" class="form-label">Cidade</label>
+            <input
+                type="text"
+                class="form-control"
+                name="cidade"
+                id="cidade"
+                placeholder="Cidade"
+            />
         </div>
         <div class="mb-3">
-            <label for="Estado" class="form-label">Estado>
-            <input type="text" class="form-control" id="Estado" value="Estado">
+            <label for="estado" class="form-label">Estado</label>
+            <input
+                type="text"
+                class="form-control"
+                name="estado"
+                id="estado"
+                placeholder="Estado"
+            />
         </div>
         <div class="mb-3">
-            <label for="CEP" class="form-label">CEP</label>
-            <input type="text" class="form-control" id="CEP" value="CEP">
+            <label for="cep" class="form-label">CEP</label>
+            <input
+                type="text"
+                class="form-control"
+                name="cep"
+                id="cep"
+                placeholder="CEP"
+            />
         </div>
         <button type="submit" class="btn btn-primary">Salvar</button>
         <a href="/agenda" class="btn btn-secondary">Cancelar</a>
     </form>
-   </div>
+</div>
 
 <%- include("includes/footer"); %>

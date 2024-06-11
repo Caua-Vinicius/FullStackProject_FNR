@@ -1,67 +1,43 @@
 <%- include("includes/header"); %>
 
-    <script>
+<script>
+    function confirmar(mensagem) {
+        console.log(event);
+        const result = confirm(mensagem);
 
-        function confirmar(mensagem) {
-            console.log(event)
-            const result = confirm(mensagem);
-
-            if (!result) {
-                return false;
-            }
+        if (!result) {
+            return false;
         }
+    }
+</script>
 
-    </script>
+<div class="container">
+    <h3>Lista de Contatos</h3>
 
-    <div class="container">
-        <h3>Lista de Contatos</h3>
-
-        <div>
-            <a type="button" class="btn btn-primary" href="/agenda/create/">Adicionar contato</a>
-        </div>
-
-        <div class="contatos">
-            <% for(const contato of contatos) { %>
-                <div class="contato">
-                    <h2 class="Nome-contato">
-                        <%= contato.nome%>
-                    </h2>
-                    <h3 class="Celular-contato">
-                        <%= contato.celular>
-                    </h3>
-                    <h3 class="Email">
-                        <%= contato.email>
-                    </h3>
-                    <h3 class="Rua-contato">
-                        <%= contato.rua>
-                    </h3>
-                    <h3 class="Complemento-contato">
-                        <%= contato.complemento>
-                    </h3>
-                    <h3 class="Numero">
-                        <%= contato.numero>
-                    </h3>
-                    <h3 class="Bairro-contato">
-                        <%= contato.bairro>
-                    </h3>
-                    <h3 class="Cidade-contato">
-                        <%= contato.cidade>
-                    </h3>
-                    <h3 class="Estado-contato">
-                        <%= contato.estado>
-                    </h3>
-                    <h3 class="CEP-contato">
-                        <%= contato.cep>
-                    </h3>
-                </div>
-                <a type="button" class="btn btn-success" href="/agenda/edit/<%= contato.id %>">Editar</a>
-                <form action="/agenda/remove/<%= contato.id %>" method="POST" style="display: inline-block"
-                    onsubmit="return confirmar('Tem certeza que deseja excluir esse contato?')">
-                    <button type="submit" class="btn btn-danger">Excluir</button>
-                </form>
-
-                <% } %>
-        </div>
+    <div>
+        <a type="button" class="btn btn-primary" href="/agenda/create/">Adicionar contato</a>
     </div>
 
-    <%- include("includes/footer"); %>
+    <div class="contatos">
+        <% for(const contato of contatos) { %>
+        <div class="contato">
+            <h2 class="Nome-contato"><%= contato.nome %></h2>
+            <h3 class="Celular-contato"><%= contato.celular %></h3>
+            <h3 class="Email"><%= contato.email %></h3>
+            <h3 class="Rua-contato"><%= contato.rua %></h3>
+            <h3 class="Complemento-contato"><%= contato.complemento %></h3>
+            <h3 class="Numero"><%= contato.numero %></h3>
+            <h3 class="Bairro-contato"><%= contato.bairro %></h3>
+            <h3 class="Cidade-contato"><%= contato.cidade %></h3>
+            <h3 class="Estado-contato"><%= contato.estado %></h3>
+            <h3 class="CEP-contato"><%= contato.cep %></h3>
+        </div>
+        <a type="button" class="btn btn-success" href="/agenda/edit/<%= contato.id %>">Editar</a>
+        <form action="/agenda/remove/<%= contato.id %>" method="POST" style="display: inline-block" onsubmit="return confirmar('Tem certeza que deseja excluir esse contato?')">
+            <button type="submit" class="btn btn-danger">Excluir</button>
+        </form>
+        <% } %>
+    </div>
+</div>
+
+<%- include("includes/footer"); %>
