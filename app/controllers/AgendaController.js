@@ -6,14 +6,14 @@ function AgendaController() {
   async function list(req, res) {
     const contatos = await AgendaRepository.getAll;
 
-    res.render('agenda', { 
+    res.render('/agenda/list', { 
       title: "Lista de Contatos",
       contatos: contatos
     })
   }
 
   function create(req, res) {
-    res.render('agenda/create')
+    res.render('/agenda/create')
   }
 
   async function save(req, res) {
