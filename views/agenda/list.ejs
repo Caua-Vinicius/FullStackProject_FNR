@@ -31,11 +31,12 @@
             <h3 class="Cidade-contato"><%= contato.cidade %></h3>
             <h3 class="Estado-contato"><%= contato.estado %></h3>
             <h3 class="CEP-contato"><%= contato.cep %></h3>
+            <a type="button" class="btn btn-success" href="/agenda/edit/<%= contato.id %>">Editar</a>
+            <form action="/agenda/remove/<%= contato.id %>" method="POST" style="display: inline-block" onsubmit="return confirmar('Tem certeza que deseja excluir esse contato?')">
+                <button type="submit" class="btn btn-danger">Excluir</button>
+            </form>
         </div>
-        <a type="button" class="btn btn-success" href="/agenda/edit/<%= contato.id %>">Editar</a>
-        <form action="/agenda/remove/<%= contato.id %>" method="POST" style="display: inline-block" onsubmit="return confirmar('Tem certeza que deseja excluir esse contato?')">
-            <button type="submit" class="btn btn-danger">Excluir</button>
-        </form>
+
         <% } %>
     </div>
 </div>

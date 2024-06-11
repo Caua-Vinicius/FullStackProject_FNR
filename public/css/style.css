@@ -2,48 +2,130 @@
 
 * {
   box-sizing: border-box;
-  padding: 0px;
-  margin: 0px;
-
+  padding: 0;
+  margin: 0;
   font-family: 'Roboto', sans-serif;
 }
 
 .header {
-    height: 150px;
-    background-color: rgb(53, 42, 41);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  height: 150px;
+  background-color: rgb(53, 42, 41);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.header .menu {
-    display: flex;
-    justify-content: space-around;
-    gap: 30px;
-    list-style: none;
+.header.menu {
+  display: flex;
+  justify-content: space-around;
+  gap: 30px;
+  list-style: none;
 }
 
-.header .menu a {
-    color: white;
-    text-transform: uppercase;
-    text-decoration: none;
-    font-size: 24px;
-    letter-spacing: 5px;
+.header.menu a {
+  color: white;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 24px;
+  letter-spacing: 5px;
 }
 
 .container {
-    min-height: calc(100vh - 56px - 100px);
-    padding: 50px;
+  min-height: calc(100vh - 56px - 100px);
+  padding: 50px;
 }
 
 .footer {
-    height: 100px;
-    background-color: rgb(26, 21, 21);
-    padding: 10px;
-    color: white;
+  height: 100px;
+  background-color: rgb(26, 21, 21);
+  padding: 10px;
+  color: white;
 }
 
 .concluido td:not(:last-child) {
-    text-decoration-line: line-through;
-    text-decoration-thickness: 2px;
+  text-decoration-line: line-through;
+  text-decoration-thickness: 2px;
+}
+
+.contatos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.contato {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  background-color: #fff;
+  padding: 20px;
+}
+
+.Nome-contato,
+.Celular-contato,
+.Email,
+.Rua-contato,
+.Complemento-contato,
+.Numero,
+.Bairro-contato,
+.Cidade-contato,
+.Estado-contato,
+.CEP-contato {
+  margin: 5px 0;
+  color: #333;
+}
+
+.btn {
+  cursor: pointer;
+  border: none;
+  padding: 10px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  transition-duration: 0.4s;
+  color: white;
+  border-radius: 5px;
+}
+
+.btn:hover {
+  opacity: 0.8;
+}
+
+.btn-primary {
+  background-color: #007bff;
+}
+
+.btn-success {
+  background-color: #28a745;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+}
+
+a {
+  color: #007bff;
+  text-decoration: underline;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #0056b3;
+}
+
+form button[type="submit"] {
+  background-color: #dc3545;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 10px 15px;
+  border-radius: 5px;
+  margin-left: 10px;
+}
+
+form button[type="submit"]:hover {
+  background-color: #c53030;
 }
